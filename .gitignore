@@ -1,0 +1,8 @@
+# work space file
+suzu_bot.code-workspace
+
+# env
+.env
+
+# node_modules
+node_modules/
