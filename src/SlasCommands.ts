@@ -9,6 +9,7 @@ export const SlashCommands: ApplicationCommandDataResolvable[] = [
                 type: 'STRING',
                 name: 'name',
                 description: 'valorant name(suzuking#szk)',
+                required: true,
             },
         ],
     },
