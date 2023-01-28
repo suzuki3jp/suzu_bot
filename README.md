@@ -12,4 +12,5 @@ A discord bot.
     - update 上記４つに該当しない変更
     - upgrade パッケージ更新
     - downgrade パッケージダウングレード
+    - add ファイル・パッケージ追加
     - delete パッケージ削除
