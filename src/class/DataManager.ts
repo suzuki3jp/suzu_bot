@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs';
-import path, { resolve } from 'path';
+import { resolve } from 'path';
 
 export class DataManager {
     public _paths: {
@@ -21,7 +21,7 @@ export class DataManager {
     }
 
     setSettings(data: string | SettingsJson) {
-        this._writeFile(path, data);
+        this._writeFile(this._paths.settings, data);
     }
 
     _readFile(path: string): any {
