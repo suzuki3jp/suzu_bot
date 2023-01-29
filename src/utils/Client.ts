@@ -7,7 +7,7 @@ import { Client, Intents } from 'discord.js';
  */
 export const createClient = (): Client => {
     return new Client({
-        intents: Object.values(Intents),
+        intents: Object.values(Intents.FLAGS),
         partials: ['USER', 'CHANNEL', 'GUILD_MEMBER', 'MESSAGE', 'REACTION', 'GUILD_SCHEDULED_EVENT'],
     });
 };
