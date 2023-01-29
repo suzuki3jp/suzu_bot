@@ -3,12 +3,12 @@ import { CommandInteraction } from 'discord.js';
 import { Agent } from 'https';
 
 import { Base } from '../../class/Base';
-import { extendInteractionTime } from '../../utils/Discord';
+import { deferInteractionReply } from '../../utils/Discord';
 
 export const commandInteraction = async (base: Base, interaction: CommandInteraction) => {
     if (interaction.command?.name === 'rank') {
         // rank コマンド
-        extendInteractionTime(interaction);
+        deferInteractionReply(interaction);
         const name = interaction.options.getString('name');
         if (!name && !name?.includes('#'))
             return interaction.followUp({
@@ -36,7 +36,7 @@ export const commandInteraction = async (base: Base, interaction: CommandInterac
             });
 
         // 成功
-        const [left, _, right] = res.data.split('|');
+        const [left, right] = res.data.split('|');
         const [tier, place] = left.split(' ');
         const [point, ...ignore] = right.split('pt');
         interaction.followUp({
