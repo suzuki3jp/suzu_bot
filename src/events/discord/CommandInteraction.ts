@@ -44,7 +44,7 @@ export const commandInteraction = async (base: Base, interaction: CommandInterac
                 {
                     title: `${id}の現在のランク`,
                     description: `${tier} ${place} | ${point}pt`,
-                    color: RankColorMap[point] ?? 'DEFAULT',
+                    color: RankColorMap[tier] ?? 'DEFAULT',
                 },
             ],
         });
