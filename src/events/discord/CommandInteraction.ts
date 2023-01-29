@@ -48,6 +48,7 @@ export const commandInteraction = async (base: Base, interaction: CommandInterac
                 },
             ],
         });
+        base.loggers.command.info('/', interaction.command.name, ' was used by ', interaction.user.tag);
         return;
     }
 };
