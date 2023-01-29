@@ -1,5 +1,6 @@
 import { RequestClient, JST } from '@suzuki3jp/utils';
 import { CommandInteraction } from 'discord.js';
+import { Agent } from 'https';
 
 import { Base } from '../../class/Base';
 import { extendInteractionTime } from '../../utils/Discord';
@@ -15,7 +16,10 @@ export const commandInteraction = async (base: Base, interaction: CommandInterac
                 ephemeral: true,
             });
         const [id, tag] = name.split('#');
-        const res = await new RequestClient().get({ url: `https://suzuki-dev.com/api/rank/${id}/${tag}` });
+        const res = await new RequestClient().get({
+            url: `https://suzuki-dev.com/api/rank/${id}/${tag}`,
+            config: { httpsAgent: new Agent({ rejectUnauthorized: false }) },
+        });
 
         // 404
         if (res.status === 404)
